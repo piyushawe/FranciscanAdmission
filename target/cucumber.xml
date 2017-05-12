@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="23.785727">
+<testcase classname="Admission reports" name="To test sibling report" time="23.785727">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And sibling report page is opened...........................................passed
+When user select session "2017-2018" on sibling report page.................passed
+And select school "All" on sibling report page..............................passed
+And select class "1-A" on sibling report page...............................passed
+And select show details for "Elder" on sibling report page..................passed
+Then user click show to open sibling report.................................passed
+]]></system-out>
+</testcase>
+</testsuite>

@@ -1,0 +1,246 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 5,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1088414983,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user enter \"http://qaerp.franciscanecare.net\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "http://qaerp.franciscanecare.net",
+                  "offset": 12
+                }
+              ],
+              "location": "MyTestDefs.user_enter(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 176421186,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user enter \"admin\" and \"Admin#franciscan\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "admin",
+                  "offset": 12
+                },
+                {
+                  "val": "Admin#franciscan",
+                  "offset": 24
+                }
+              ],
+              "location": "MyTestDefs.user_enter_and(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 74483,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "passes school name \"qaerp\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "qaerp",
+                  "offset": 20
+                }
+              ],
+              "location": "MyTestDefs.passes_school_name(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2000821959,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "click signin",
+            "match": {
+              "location": "MyTestDefs.click_signin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 300564258,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "admission home page is opened",
+            "match": {
+              "location": "MyTestDefs.admission_home_page_is_opened()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4021349233,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyTestDefs.launchBrowser(Scenario)"
+            }
+          }
+        ],
+        "line": 314,
+        "name": "To test sibling report",
+        "description": "",
+        "id": "admission-reports;to-test-sibling-report;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 4816562693,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyTestDefs.closeBrowser()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 639623641,
+              "status": "passed"
+            },
+            "line": 305,
+            "name": "sibling report page is opened",
+            "match": {
+              "location": "MyTestDefs.sibling_report_page_is_opened()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1278321515,
+              "status": "passed"
+            },
+            "line": 306,
+            "name": "user select session \"2017-2018\" on sibling report page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2017-2018",
+                  "offset": 21
+                }
+              ],
+              "location": "MyTestDefs.user_select_session_on_sibling_report_page(String)"
+            },
+            "matchedColumns": [
+              4
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 266874498,
+              "status": "passed"
+            },
+            "line": 307,
+            "name": "select school \"All\" on sibling report page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "All",
+                  "offset": 15
+                }
+              ],
+              "location": "MyTestDefs.select_school_on_sibling_report_page(String)"
+            },
+            "matchedColumns": [
+              5
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1922200398,
+              "status": "passed"
+            },
+            "line": 308,
+            "name": "select class \"1-A\" on sibling report page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1-A",
+                  "offset": 14
+                }
+              ],
+              "location": "MyTestDefs.select_class_on_sibling_report_page(String)"
+            },
+            "matchedColumns": [
+              3
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 88405599,
+              "status": "passed"
+            },
+            "line": 309,
+            "name": "select show details for \"Elder\" on sibling report page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Elder",
+                  "offset": 25
+                }
+              ],
+              "location": "MyTestDefs.select_show_details_for_on_sibling_report_page(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7186092912,
+              "status": "passed"
+            },
+            "line": 310,
+            "name": "user click show to open sibling report",
+            "match": {
+              "location": "MyTestDefs.user_click_show_to_open_sibling_report()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 303,
+            "name": "@scenario21"
+          }
+        ]
+      }
+    ],
+    "name": "Admission reports",
+    "description": "   As a user I would like to open all the admission reports\n   So that I can verify that there is no problem in report loading",
+    "id": "admission-reports",
+    "keyword": "Feature",
+    "uri": "Feature/Reports.feature"
+  }
+]
