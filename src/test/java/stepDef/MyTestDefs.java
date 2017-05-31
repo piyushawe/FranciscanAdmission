@@ -6,12 +6,50 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import admissionPageObject.AddRemoveGroupHeads;
+import admissionPageObject.AdmissionEntry;
+import admissionPageObject.AdmissionEntryAmountStructure;
+import admissionPageObject.AdmissionFormRegistration;
+import admissionPageObject.ChallanAmount;
+import admissionPageObject.CreateIDCard;
+import admissionPageObject.DefineMeritCriteria;
+import admissionPageObject.DefineParentStatus;
+import admissionPageObject.Enquiry;
+import admissionPageObject.ImportStudent;
+import admissionPageObject.ManualListGeneration;
+import admissionPageObject.MeritCriteriaEntry;
+import admissionPageObject.MeritListGeneration;
+import admissionPageObject.ProspectusEntry;
+import admissionPageObject.ReSlotting;
+import admissionPageObject.SlotCreation;
+import admissionPageObject.SlotWisePointEntry;
+import admissionPageObject.StudentRegistration;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import globalMastersPageObject.DefineAcademicYear;
+import globalMastersPageObject.DefineFinancialYear;
+import globalMastersPageObject.DefineHouse;
+import globalMastersPageObject.DefineOptionalSubject;
+import globalMastersPageObject.DefinePeriodsToClass;
+import globalMastersPageObject.DefineSmsTemplate;
+import globalMastersPageObject.DefineStream;
+import globalMastersPageObject.PossibleSiblings;
+import globalMastersPageObject.StationaryDetails;
+import masterSettingsPageObject.AdmissionClassGroupRelation;
+import masterSettingsPageObject.AdmissionFormSettings;
+import masterSettingsPageObject.ChangeAcademic;
+import masterSettingsPageObject.ChangeActiveInactiveStatus;
+import masterSettingsPageObject.DefineDocumentType;
+import masterSettingsPageObject.ProspectusAndRegistrationNoSetting;
+import masterSettingsPageObject.StudentClassPromotion;
+import masterSettingsPageObject.StudentClassSectionTransfer;
+import masterSettingsPageObject.StudentImageDownload;
+import masterSettingsPageObject.UpdateAddressAndBlood;
+import masterSettingsPageObject.UpdateStudentDetails;
 import pageObjects.AdmissionWithdrawalRegister;
 import pageObjects.ClassWiseAdmisssionReport;
 import pageObjects.CollectionReportAdmission;
@@ -643,5 +681,498 @@ public class MyTestDefs {
 		s.clickShow(schoolname, scenario);
 	}
 
+//change academic
+	@When("^user open change academic page$")
+	public void user_open_change_academic_page() throws Throwable {
+		ChangeAcademic ca= new ChangeAcademic(driver);
+		ca.openChangeAcademic();
+	}
+
+	@Then("^verify change academic page$")
+	public void verify_change_academic_page() throws Throwable {
+		ChangeAcademic ca= new ChangeAcademic(driver);
+		ca.verifyPage(schoolname, scenario);
+	}
+	
+//prospectus & registration no setting
+	@When("^user open prospectus & registration no setting page$")
+	public void user_open_prospectus_registration_no_setting_page() throws Throwable {
+		ProspectusAndRegistrationNoSetting prs= new ProspectusAndRegistrationNoSetting(driver);
+		prs.openProspectusAndRegistrationNoSetting();
+	}
+
+	@Then("^verify prospectus & registration no setting page$")
+	public void verify_prospectus_registration_no_setting_page() throws Throwable {
+		ProspectusAndRegistrationNoSetting prs= new ProspectusAndRegistrationNoSetting(driver);
+		prs.verifyPage(schoolname, scenario);
+	}
+	
+//admission class group relation
+	@When("^user open admission class group relation page$")
+	public void user_open_admission_class_group_relation_page() throws Throwable {
+		AdmissionClassGroupRelation acgr= new AdmissionClassGroupRelation(driver);
+		acgr.openAdmissionClassGroupRelation();
+	}
+
+	@Then("^verify admission class group relation page$")
+	public void verify_admission_class_group_relation_page() throws Throwable {
+		AdmissionClassGroupRelation acgr= new AdmissionClassGroupRelation(driver);
+		acgr.verifyPage(schoolname, scenario);
+	}
+
+//student class section transfer
+	@When("^user open student class section transfer page$")
+	public void user_open_student_class_section_transfer_page() throws Throwable {
+		StudentClassSectionTransfer scst= new StudentClassSectionTransfer(driver);
+		scst.openStudentClassSectionTransfer();
+	}
+
+	@Then("^verify student class section transfer page$")
+	public void verify_student_class_section_transfer_page() throws Throwable {
+		StudentClassSectionTransfer scst= new StudentClassSectionTransfer(driver);
+		scst.verifyPage(schoolname, scenario);
+	}
+	
+//change active inactive status
+	@When("^user open change active inactive status page$")
+	public void user_open_change_active_inactive_status_page() throws Throwable {
+		ChangeActiveInactiveStatus cais= new ChangeActiveInactiveStatus(driver);
+		cais.openChangeActiveInactiveStatus();
+	}
+
+	@Then("^verify change active inactive status page$")
+	public void verify_change_active_inactive_status_page() throws Throwable {
+		ChangeActiveInactiveStatus cais= new ChangeActiveInactiveStatus(driver);
+		cais.verifyPage(schoolname, scenario);
+	}
+
+//update address and blood
+	@When("^user open update address and blood page$")
+	public void user_open_update_address_and_blood_page() throws Throwable {
+		UpdateAddressAndBlood uab= new UpdateAddressAndBlood(driver);
+		uab.openUpdateAddressAndBlood();
+	}
+
+	@Then("^verify update address and blood page$")
+	public void verify_update_address_and_blood_page() throws Throwable {
+		UpdateAddressAndBlood uab= new UpdateAddressAndBlood(driver);
+		uab.verifyPage(schoolname, scenario);
+	}
+	
+//update student details
+	@When("^user open update student details page$")
+	public void user_open_update_student_details_page() throws Throwable {
+		UpdateStudentDetails usd= new UpdateStudentDetails(driver);
+		usd.openUpdateStudentDetails();
+	}
+
+	@Then("^verify update student details page$")
+	public void verify_update_student_details_page() throws Throwable {
+		UpdateStudentDetails usd= new UpdateStudentDetails(driver);
+		usd.verifyPage(schoolname, scenario);
+	}
+	
+//define document type
+	@When("^user open define document type page$")
+	public void user_open_define_document_type_page() throws Throwable {
+		DefineDocumentType ddt= new DefineDocumentType(driver);
+		ddt.openDefineDocumentType();
+	}
+
+	@Then("^verify define document type page$")
+	public void verify_define_document_type_page() throws Throwable {
+		DefineDocumentType ddt= new DefineDocumentType(driver);
+		ddt.verifyPage(schoolname, scenario);
+	}
+
+//student class promotion
+	@When("^user open student class promotion page$")
+	public void user_open_student_class_promotion_page() throws Throwable {
+		StudentClassPromotion scp= new StudentClassPromotion(driver);
+		scp.openStudentClassPromotion();
+	}
+
+	@Then("^verify student class promotion page$")
+	public void verify_student_class_promotion_page() throws Throwable {
+		StudentClassPromotion scp= new StudentClassPromotion(driver);
+		scp.verifyPage(schoolname, scenario);
+	}
+
+//student image download
+	@When("^user open student image download page$")
+	public void user_open_student_image_download_page() throws Throwable {
+		StudentImageDownload sid= new StudentImageDownload(driver);
+		sid.openStudentImageDownload();
+	}
+
+	@Then("^verify student image download page$")
+	public void verify_student_image_download_page() throws Throwable {
+		StudentImageDownload sid= new StudentImageDownload(driver);
+		sid.verifyPage(schoolname, scenario);
+	}
+	
+//admission form settings
+	@When("^user open admission form settings page$")
+	public void user_open_admission_form_settings_page() throws Throwable {
+		AdmissionFormSettings afs= new AdmissionFormSettings(driver);
+		afs.openAdmissionFormSettings();
+	}
+
+	@Then("^verify admission form settings page$")
+	public void verify_admission_form_settings_page() throws Throwable {
+		AdmissionFormSettings afs= new AdmissionFormSettings(driver);
+		afs.verifyPage(schoolname, scenario);
+	}
+
+//possible siblings
+	@When("^user open possible siblings page$")
+	public void user_open_possible_siblings_page() throws Throwable {
+		PossibleSiblings ps= new PossibleSiblings(driver);
+		ps.openPossibleSiblings();
+	}
+
+	@Then("^verify possible siblings page$")
+	public void verify_possible_siblings_page() throws Throwable {
+		PossibleSiblings ps= new PossibleSiblings(driver);
+		ps.verifyPage(schoolname, scenario);
+	}
+	
+//stationary details
+	@When("^user open stationary details page$")
+	public void user_open_stationary_details_page() throws Throwable {
+		StationaryDetails sd= new StationaryDetails(driver);   
+		sd.openStationaryDetails();
+	}
+
+	@Then("^verify stationary details page$")
+	public void verify_stationary_details_page() throws Throwable {
+		StationaryDetails sd= new StationaryDetails(driver);   
+		sd.verifyPage(schoolname, scenario);
+	}
+	
+//define academic year
+	@When("^user open define academic year page$")
+	public void user_open_define_academic_year_page() throws Throwable {
+		DefineAcademicYear day= new DefineAcademicYear(driver);
+		day.openDefineAcademicYear();
+	}
+
+	@Then("^verify define academic year page$")
+	public void verify_define_academic_year_page() throws Throwable {
+		DefineAcademicYear day= new DefineAcademicYear(driver);
+		day.verifyPage(schoolname, scenario);
+	}
+	
+//define financial year	
+	@When("^user open define financial year page$")
+	public void user_open_define_financial_year_page() throws Throwable {
+		DefineFinancialYear dfy= new DefineFinancialYear(driver);
+		dfy.openDefineFinancialYear();
+	}
+
+	@Then("^verify define financial year page$")
+	public void verify_define_financial_year_page() throws Throwable {
+		DefineFinancialYear dfy= new DefineFinancialYear(driver);
+		dfy.verifyPage(schoolname, scenario);
+	}
+	
+//define periods to class
+	@When("^user open define periods to class page$")
+	public void user_open_define_periods_to_class_page() throws Throwable {
+		DefinePeriodsToClass dpc= new DefinePeriodsToClass(driver);
+		dpc.openDefinePeriodsToClass();
+	}
+
+	@Then("^verify define periods to class page$")
+	public void verify_define_periods_to_class_page() throws Throwable {
+		DefinePeriodsToClass dpc= new DefinePeriodsToClass(driver);
+		dpc.verifyPage(schoolname, scenario);
+	}
+	
+//define house
+	@When("^user open define house page$")
+	public void user_open_define_house_page() throws Throwable {
+		DefineHouse dh= new DefineHouse(driver);
+		dh.openDefineHouse();
+	}
+
+	@Then("^verify define house page$")
+	public void verify_define_house_page() throws Throwable {
+		DefineHouse dh= new DefineHouse(driver);
+		dh.verifyPage(schoolname, scenario);
+	}
+	
+//define stream
+	@When("^user open define stream page$")
+	public void user_open_define_stream_page() throws Throwable {
+		DefineStream ds= new DefineStream(driver);
+		ds.openDefineStream();
+	}
+
+	@Then("^verify define stream page$")
+	public void verify_define_stream_page() throws Throwable {
+		DefineStream ds= new DefineStream(driver);
+		ds.verifyPage(schoolname, scenario);
+	}
+
+//define optional subject
+	@When("^user open define optional subject page$")
+	public void user_open_define_optional_subject_page() throws Throwable {
+		DefineOptionalSubject dos= new DefineOptionalSubject(driver);
+		dos.openDefineOptionalSubject();
+	}
+
+	@Then("^verify define optional subject page$")
+	public void verify_define_optional_subject_page() throws Throwable {
+		DefineOptionalSubject dos= new DefineOptionalSubject(driver);
+		dos.verifyPage(schoolname, scenario);
+	}
+	
+//define sms template
+	@When("^user open define sms template page$")
+	public void user_open_define_sms_template_page() throws Throwable {
+		DefineSmsTemplate dst= new DefineSmsTemplate(driver); 
+		dst.openDefineSmsTemplate();
+	}
+
+	@Then("^verify define sms template page$")
+	public void verify_define_sms_template_page() throws Throwable {
+		DefineSmsTemplate dst= new DefineSmsTemplate(driver); 
+		dst.verifyPage(schoolname, scenario);
+	}
+	
+//define parent status
+	@When("^user open define parent status page$")
+	public void user_open_define_parent_status_page() throws Throwable {
+		DefineParentStatus dps= new DefineParentStatus(driver);
+		dps.openDefineParentStatus();
+	}
+
+	@Then("^verify define parent status page$")
+	public void verify_define_parent_status_page() throws Throwable {
+		DefineParentStatus dps= new DefineParentStatus(driver);
+		dps.verifyPage(schoolname, scenario);
+	}
+
+//slot creation
+	@When("^user open slot creation page$")
+	public void user_open_slot_creation_page() throws Throwable {
+		SlotCreation sc= new SlotCreation(driver);
+		sc.openSlotCreation();
+	}
+
+	@Then("^verify slot creation page$")
+	public void verify_slot_creation_page() throws Throwable {
+		SlotCreation sc= new SlotCreation(driver);
+		sc.verifyPage(schoolname, scenario);
+	}
+
+//enquiry
+	@When("^user open enquiry page$")
+	public void user_open_enquiry_page() throws Throwable {
+		Enquiry eq= new Enquiry(driver);
+		eq.openEnquiry();
+	}
+
+	@Then("^verify enquiry page$")
+	public void verify_enquiry_page() throws Throwable {
+		Enquiry eq= new Enquiry(driver);
+		eq.verifyPage(schoolname, scenario);
+	}
+	
+//prospectus entry
+	@When("^user open prospectus entry page$")
+	public void user_open_prospectus_entry_page() throws Throwable {
+		ProspectusEntry pe= new ProspectusEntry(driver);
+		pe.openProspectusEntry();
+	}
+
+	@Then("^verify prospectus entry page$")
+	public void verify_prospectus_entry_page() throws Throwable {
+		ProspectusEntry pe= new ProspectusEntry(driver);
+		pe.verifyPage(schoolname, scenario);
+	}
+	
+//define merit criteria
+	@When("^user open define merit criteria page$")
+	public void user_open_define_merit_criteria_page() throws Throwable {
+		DefineMeritCriteria dmc= new DefineMeritCriteria(driver);
+		dmc.openDefineMeritCriteria();
+	}
+
+	@Then("^verify define merit criteria page$")
+	public void verify_define_merit_criteria_page() throws Throwable {
+		DefineMeritCriteria dmc= new DefineMeritCriteria(driver);
+		dmc.verifyPage(schoolname, scenario);
+	}
+
+//merit criteria entry
+	@When("^user open merit criteria entry page$")
+	public void user_open_merit_criteria_entry_page() throws Throwable {
+		MeritCriteriaEntry mce= new MeritCriteriaEntry(driver);
+		mce.openMeritCriteriaEntry();
+	}
+
+	@Then("^verify merit criteria entry page$")
+	public void verify_merit_criteria_entry_page() throws Throwable {
+		MeritCriteriaEntry mce= new MeritCriteriaEntry(driver);
+		mce.verifyPage(schoolname, scenario);
+	}
+	
+//merit list generation	
+	@When("^user open merit list generation page$")
+	public void user_open_merit_list_generation_page() throws Throwable {
+		MeritListGeneration mlg= new MeritListGeneration(driver);
+		mlg.openMeritListGeneration();
+	}
+
+	@Then("^verify merit list generation page$")
+	public void verify_merit_list_generation_page() throws Throwable {
+		MeritListGeneration mlg= new MeritListGeneration(driver);
+		mlg.verifyPage(schoolname, scenario);
+	}
+	
+//admission entry
+	@When("^user open admission entry page$")
+	public void user_open_admission_entry_page() throws Throwable {
+		AdmissionEntry ae= new AdmissionEntry(driver);
+		ae.openAdmissionEntry();
+	}
+
+	@Then("^verify admission entry page$")
+	public void verify_admission_entry_page() throws Throwable {
+		AdmissionEntry ae= new AdmissionEntry(driver);
+		ae.verifyPage(schoolname, scenario);
+	}
+	
+//import student
+	@When("^user open import student page$")
+	public void user_open_import_student_page() throws Throwable {
+		ImportStudent is= new ImportStudent(driver);
+		is.openImportStudent();
+	}
+
+	@Then("^verify import student page$")
+	public void verify_import_student_page() throws Throwable {
+		ImportStudent is= new ImportStudent(driver);
+		is.verifyPage(schoolname, scenario);
+	}
+	
+//add remove group heads
+	@When("^user open add remove group heads page$")
+	public void user_open_add_remove_group_heads_page() throws Throwable {
+		AddRemoveGroupHeads argh= new AddRemoveGroupHeads(driver);
+		argh.openAddRemoveGroupHeads();
+	}
+
+	@Then("^verify add remove group heads page$")
+	public void verify_add_remove_group_heads_page() throws Throwable {
+		AddRemoveGroupHeads argh= new AddRemoveGroupHeads(driver);
+		argh.verifyPage(schoolname, scenario);
+	}
+	
+//manual list generation
+	@When("^user open manual list generation page$")
+	public void user_open_manual_list_generation_page() throws Throwable {
+		ManualListGeneration mlg= new ManualListGeneration(driver);
+		mlg.openManualListGeneration();
+	}
+
+	@Then("^verify manual list generation page$")
+	public void verify_manual_list_generation_page() throws Throwable {
+		ManualListGeneration mlg= new ManualListGeneration(driver);
+		mlg.verifyPage(schoolname, scenario);
+	}
+	
+//create id card
+	@When("^user open create id card page$")
+	public void user_open_create_id_card_page() throws Throwable {
+		CreateIDCard cid= new CreateIDCard(driver);
+		cid.openCreateIDCard();
+	}
+
+	@Then("^verify create id card page$")
+	public void verify_create_id_card_page() throws Throwable {
+		CreateIDCard cid= new CreateIDCard(driver);
+		cid.verifyPage(schoolname, scenario);
+	}
+	
+//admission entry amount structure
+	@When("^user open admission entry amount structure page$")
+	public void user_open_admission_entry_amount_structure_page() throws Throwable {
+		AdmissionEntryAmountStructure aeas= new AdmissionEntryAmountStructure(driver);
+		aeas.openAdmissionEntryAmountStructure();
+	}
+
+	@Then("^verify admission entry amount structure page$")
+	public void verify_admission_entry_amount_structure_page() throws Throwable {
+		AdmissionEntryAmountStructure aeas= new AdmissionEntryAmountStructure(driver);
+		aeas.verifyPage(schoolname, scenario);
+	}
+	
+//slot wise point entry
+	@When("^user open slot wise point entry page$")
+	public void user_open_slot_wise_point_entry_page() throws Throwable {
+		SlotWisePointEntry swpe= new SlotWisePointEntry(driver);
+		swpe.openSlotWisePointEntry();
+	}
+
+	@Then("^verify slot wise point entry page$")
+	public void verify_slot_wise_point_entry_page() throws Throwable {
+		SlotWisePointEntry swpe= new SlotWisePointEntry(driver);
+		swpe.verifyPage(schoolname, scenario);
+	}
+	
+//challan amount
+	@When("^user open challan amount page$")
+	public void user_open_challan_amount_page() throws Throwable {
+		ChallanAmount ca= new ChallanAmount(driver);
+		ca.openChallanAmount();
+	}
+
+	@Then("^verify challan amount page$")
+	public void verify_challan_amount_page() throws Throwable {
+		ChallanAmount ca= new ChallanAmount(driver);
+		ca.verifyPage(schoolname, scenario);
+	}
+
+//re slotting
+	@When("^user open re slotting page$")
+	public void user_open_re_slotting_page() throws Throwable {
+		ReSlotting rs= new ReSlotting(driver);
+		rs.openReSlotting();
+	}
+
+	@Then("^verify re slotting page$")
+	public void verify_re_slotting_page() throws Throwable {
+		ReSlotting rs= new ReSlotting(driver);
+		rs.verifyPage(schoolname, scenario);
+	}
+
+//admission form registration
+	@When("^user open admission form registration page$")
+	public void user_open_admission_form_registration_page() throws Throwable {
+		AdmissionFormRegistration afr= new AdmissionFormRegistration(driver);
+		afr.openAdmissionFormRegistration();
+	}
+
+	@Then("^verify admission form registration page$")
+	public void verify_admission_form_registration_page() throws Throwable {
+		AdmissionFormRegistration afr= new AdmissionFormRegistration(driver);
+		afr.verifyPage(schoolname, scenario);
+	}
+
+//student registration
+	@When("^user open student registration page$")
+	public void user_open_student_registration_page() throws Throwable {
+		StudentRegistration sr= new StudentRegistration(driver);
+		sr.openStudentRegistration();
+	}
+
+	@Then("^verify student registration page$")
+	public void verify_student_registration_page() throws Throwable {
+		StudentRegistration sr= new StudentRegistration(driver);
+		sr.verifyPage(schoolname, scenario);
+	}
 
 }
