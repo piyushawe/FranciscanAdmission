@@ -3,9 +3,9 @@ Feature: Admission reports
      So that I can verify that there is no problem in report loading
 
   Background: 
-    Given user enter "http://qaerp.franciscanecare.net"
-    When user enter "admin" and "Admin#franciscan"
-    And passes school name "qaerp"
+    Given user enter " http://192.168.10.101:8069/Modules.aspx"
+    When user enter "admin" and "admin@123"
+    And passes school name "rosary"
     And click signin
     Then admission home page is opened
 
