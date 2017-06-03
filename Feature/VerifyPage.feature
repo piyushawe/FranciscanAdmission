@@ -3,9 +3,9 @@ Feature: Franciscan Admission
       The page is loaded successfully
 
   Background: 
-    Given user enter " http://192.168.10.101:8069/Modules.aspx"
-    When user enter "admin" and "admin@123"
-    And passes school name "rosary"
+    Given user enter "http://erp.stkarenssecondaryschool.com"
+    When user enter "admin" and "stkss#54321techpass"
+    And passes school name "st karen"
     And click signin
     Then admission home page is opened
 
