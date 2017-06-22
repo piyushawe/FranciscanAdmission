@@ -1,12 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="17.221024">
-<testcase classname="Franciscan Admission" name="To verify student registration page" time="17.221024">
-<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="13.967699">
+<testcase classname="Franciscan Admission" name="To verify save button on enquiry" time="13.967699">
+<failure message="java.lang.AssertionError&#13;&#10;&#9;at org.junit.Assert.fail(Assert.java:86)&#13;&#10;&#9;at org.junit.Assert.assertTrue(Assert.java:41)&#13;&#10;&#9;at org.junit.Assert.assertTrue(Assert.java:52)&#13;&#10;&#9;at admissionPageObject.Enquiry.clickSave(Enquiry.java:83)&#13;&#10;&#9;at stepDef.MyTestDefs.click_save_on_enquiry_page(MyTestDefs.java:1168)&#13;&#10;&#9;at ✽.Then click save on enquiry page(Feature/VerifySaveView.feature:114)&#13;&#10;"><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
 When user enter "admin" and "Admin#franciscan"..............................passed
 And passes school name "qaerp"..............................................passed
 And click signin............................................................passed
 Then admission home page is opened..........................................passed
-When user open student registration page....................................passed
-Then verify student registration page.......................................passed
-]]></system-out>
+When user open enquiry page.................................................passed
+And click get last enquiry no on enquiry page...............................passed
+And enter visitor name as "arush" on enquiry page...........................passed
+And enter visitor address "Noida" on enquiry page...........................passed
+And enter mobile no "6798643210" on enquiry page............................passed
+And enter purpose "Admission" on enquiry page...............................passed
+And enter contact person "Adm dept" on enquiry page.........................passed
+And enter reference details "none" on enquiry page..........................passed
+Then click save on enquiry page.............................................failed
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at admissionPageObject.Enquiry.clickSave(Enquiry.java:83)
+	at stepDef.MyTestDefs.click_save_on_enquiry_page(MyTestDefs.java:1168)
+	at ✽.Then click save on enquiry page(Feature/VerifySaveView.feature:114)
+]]></failure>
 </testcase>
 </testsuite>

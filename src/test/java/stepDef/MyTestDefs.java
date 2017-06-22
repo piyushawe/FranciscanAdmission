@@ -65,6 +65,8 @@ import pageObjects.StudentDocumentDetails;
 import pageObjects.StudentRepeaterList;
 import pageObjects.VerificationAdmissionForm;
 
+import static com.sun.xml.internal.ws.dump.LoggingDumpTube.Position.Before;
+
 public class MyTestDefs {
 	WebDriver driver;
 	String schoolname;
@@ -785,6 +787,30 @@ public class MyTestDefs {
 		ddt.verifyPage(schoolname, scenario);
 	}
 
+	@When("^select document type on define document type page$")
+	public void select_document_type_on_define_document_type_page() throws Throwable {
+		DefineDocumentType ddt= new DefineDocumentType(driver);
+		ddt.selectDocumentType();
+	}
+
+	@When("^enter document name as \"([^\"]*)\" on define document type page$")
+	public void enter_document_name_as_on_define_document_type_page(String arg1) throws Throwable {
+		DefineDocumentType ddt= new DefineDocumentType(driver);
+		ddt.enterDocumentName(arg1);
+	}
+
+	@Then("^click save on define document type page$")
+	public void click_save_on_define_document_type_page() throws Throwable {
+		DefineDocumentType ddt= new DefineDocumentType(driver);
+		ddt.clickSave(schoolname, scenario);
+	}
+
+	@Then("^click view on define document type page$")
+	public void click_view_on_define_document_type_page() throws Throwable {
+		DefineDocumentType ddt= new DefineDocumentType(driver);
+		ddt.clickView(schoolname, scenario);
+	}
+
 //student class promotion
 	@When("^user open student class promotion page$")
 	public void user_open_student_class_promotion_page() throws Throwable {
@@ -849,7 +875,49 @@ public class MyTestDefs {
 		StationaryDetails sd= new StationaryDetails(driver);   
 		sd.verifyPage(schoolname, scenario);
 	}
-	
+
+	@When("^enter stationary name \"([^\"]*)\" on stationary details page$")
+	public void enter_stationary_name_on_stationary_details_page(String arg1) throws Throwable {
+		StationaryDetails sd= new StationaryDetails(driver);
+		sd.enterStationaryName(arg1);
+	}
+
+	@When("^enter amount \"([^\"]*)\" on stationary details page$")
+	public void enter_amount_on_stationary_details_page(String arg1) throws Throwable {
+		StationaryDetails sd= new StationaryDetails(driver);
+		sd.enterAmount(arg1);
+	}
+
+	@When("^select post account name on stationary details page$")
+	public void select_post_account_name_on_stationary_details_page() throws Throwable {
+		StationaryDetails sd= new StationaryDetails(driver);
+		sd.selectPostAccountName();
+	}
+
+	@When("^select school name on stationary details page$")
+	public void select_school_name_on_stationary_details_page() throws Throwable {
+		StationaryDetails sd= new StationaryDetails(driver);
+		sd.selectSchoolName();
+	}
+
+	@When("^select session \"([^\"]*)\" on stationary details page$")
+	public void select_session_on_stationary_details_page(String arg1) throws Throwable {
+		StationaryDetails sd= new StationaryDetails(driver);
+		sd.selectSession(arg1);
+	}
+
+	@Then("^click save on stationary details page$")
+	public void click_save_on_stationary_details_page() throws Throwable {
+		StationaryDetails sd= new StationaryDetails(driver);
+		sd.clickSave(schoolname, scenario);
+	}
+
+	@Then("^click view on stationary details page$")
+	public void click_view_on_stationary_details_page() throws Throwable {
+		StationaryDetails sd= new StationaryDetails(driver);
+		sd.clickView(schoolname, scenario);
+	}
+
 //define academic year
 	@When("^user open define academic year page$")
 	public void user_open_define_academic_year_page() throws Throwable {
@@ -901,7 +969,25 @@ public class MyTestDefs {
 		DefineHouse dh= new DefineHouse(driver);
 		dh.verifyPage(schoolname, scenario);
 	}
-	
+
+	@When("^enter house name as \"([^\"]*)\" on define house page$")
+	public void enter_house_name_as_on_define_house_page(String arg1) throws Throwable {
+		DefineHouse dh= new DefineHouse(driver);
+		dh.enterHouse(arg1);
+	}
+
+	@Then("^click save on define house page$")
+	public void click_save_on_define_house_page() throws Throwable {
+		DefineHouse dh= new DefineHouse(driver);
+		dh.clickSave(schoolname, scenario);
+	}
+
+	@Then("^click view on define house page$")
+	public void click_view_on_define_house_page() throws Throwable {
+		DefineHouse dh= new DefineHouse(driver);
+		dh.clickView(schoolname, scenario);
+	}
+
 //define stream
 	@When("^user open define stream page$")
 	public void user_open_define_stream_page() throws Throwable {
@@ -913,6 +999,24 @@ public class MyTestDefs {
 	public void verify_define_stream_page() throws Throwable {
 		DefineStream ds= new DefineStream(driver);
 		ds.verifyPage(schoolname, scenario);
+	}
+
+	@When("^enter stream name as \"([^\"]*)\" on define stream page$")
+	public void enter_stream_name_as_on_define_stream_page(String arg1) throws Throwable {
+		DefineStream ds= new DefineStream(driver);
+		ds.enterStreamName(arg1);
+	}
+
+	@Then("^click save on define stream page$")
+	public void click_save_on_define_stream_page() throws Throwable {
+		DefineStream ds= new DefineStream(driver);
+		ds.clickSave(schoolname, scenario);
+	}
+
+	@Then("^click view on define stream page$")
+	public void click_view_on_define_stream_page() throws Throwable {
+		DefineStream ds= new DefineStream(driver);
+		ds.clickView(schoolname, scenario);
 	}
 
 //define optional subject
@@ -927,7 +1031,25 @@ public class MyTestDefs {
 		DefineOptionalSubject dos= new DefineOptionalSubject(driver);
 		dos.verifyPage(schoolname, scenario);
 	}
-	
+
+	@When("^enter subject name as \"([^\"]*)\" on define optional subject page$")
+	public void enter_subject_name_as_on_define_optional_subject_page(String arg1) throws Throwable {
+		DefineOptionalSubject dos= new DefineOptionalSubject(driver);
+		dos.enterSubjectName(arg1);
+	}
+
+	@Then("^click save on define optional subject page$")
+	public void click_save_on_define_optional_subject_page() throws Throwable {
+		DefineOptionalSubject dos= new DefineOptionalSubject(driver);
+		dos.clickSave(schoolname, scenario);
+	}
+
+	@Then("^click view on define optional subject page$")
+	public void click_view_on_define_optional_subject_page() throws Throwable {
+		DefineOptionalSubject dos= new DefineOptionalSubject(driver);
+		dos.clickView(schoolname, scenario);
+	}
+
 //define sms template
 	@When("^user open define sms template page$")
 	public void user_open_define_sms_template_page() throws Throwable {
@@ -952,6 +1074,24 @@ public class MyTestDefs {
 	public void verify_define_parent_status_page() throws Throwable {
 		DefineParentStatus dps= new DefineParentStatus(driver);
 		dps.verifyPage(schoolname, scenario);
+	}
+
+	@When("^enter parent status as \"([^\"]*)\" on define parent status page$")
+	public void enter_parent_status_as_on_define_parent_status_page(String arg1) throws Throwable {
+		DefineParentStatus dps= new DefineParentStatus(driver);
+		dps.enterParentStatus(arg1);
+	}
+
+	@Then("^click save on define parent status page$")
+	public void click_save_on_define_parent_status_page() throws Throwable {
+		DefineParentStatus dps= new DefineParentStatus(driver);
+		dps.clickSave(schoolname, scenario);
+	}
+
+	@Then("^click view on define parent status page$")
+	public void click_view_on_define_parent_status_page() throws Throwable {
+		DefineParentStatus dps= new DefineParentStatus(driver);
+		dps.clickView(schoolname, scenario);
 	}
 
 //slot creation
@@ -979,8 +1119,62 @@ public class MyTestDefs {
 		Enquiry eq= new Enquiry(driver);
 		eq.verifyPage(schoolname, scenario);
 	}
-	
-//prospectus entry
+
+	@When("^click get last enquiry no on enquiry page$")
+	public void click_get_last_enquiry_no_on_enquiry_page() throws Throwable {
+		Enquiry eq= new Enquiry(driver);
+		eq.clickGetLastEnquiryNo();
+	}
+
+	@When("^enter visitor name as \"([^\"]*)\" on enquiry page$")
+	public void enter_visitor_name_as_on_enquiry_page(String arg1) throws Throwable {
+		Enquiry eq= new Enquiry(driver);
+		eq.enterVisitorName(arg1);
+	}
+
+	@When("^enter visitor address \"([^\"]*)\" on enquiry page$")
+	public void enter_visitor_address_on_enquiry_page(String arg1) throws Throwable {
+		Enquiry eq= new Enquiry(driver);
+		eq.enterVisitorAddress(arg1);
+	}
+
+	@When("^enter mobile no \"([^\"]*)\" on enquiry page$")
+	public void enter_mobile_no_on_enquiry_page(String arg1) throws Throwable {
+		Enquiry eq= new Enquiry(driver);
+		eq.enterMobileNo(arg1);
+	}
+
+	@When("^enter purpose \"([^\"]*)\" on enquiry page$")
+	public void enter_purpose_on_enquiry_page(String arg1) throws Throwable {
+		Enquiry eq= new Enquiry(driver);
+		eq.enterPurpose(arg1);
+	}
+
+	@When("^enter contact person \"([^\"]*)\" on enquiry page$")
+	public void enter_contact_person_on_enquiry_page(String arg1) throws Throwable {
+		Enquiry eq= new Enquiry(driver);
+		eq.enterContactPerson(arg1);
+	}
+
+	@When("^enter reference details \"([^\"]*)\" on enquiry page$")
+	public void enter_reference_details_on_enquiry_page(String arg1) throws Throwable {
+		Enquiry eq= new Enquiry(driver);
+		eq.enterReferenceDetails(arg1);
+	}
+
+	@Then("^click save on enquiry page$")
+	public void click_save_on_enquiry_page() throws Throwable {
+		Enquiry eq= new Enquiry(driver);
+		eq.clickSave(schoolname, scenario);
+	}
+
+	@Then("^click view on enquiry page$")
+	public void click_view_on_enquiry_page() throws Throwable {
+		Enquiry eq= new Enquiry(driver);
+		eq.clickView(schoolname, scenario);
+	}
+
+	//prospectus entry
 	@When("^user open prospectus entry page$")
 	public void user_open_prospectus_entry_page() throws Throwable {
 		ProspectusEntry pe= new ProspectusEntry(driver);
@@ -1004,6 +1198,36 @@ public class MyTestDefs {
 	public void verify_define_merit_criteria_page() throws Throwable {
 		DefineMeritCriteria dmc= new DefineMeritCriteria(driver);
 		dmc.verifyPage(schoolname, scenario);
+	}
+
+	@When("^select session \"([^\"]*)\" on define merit criteria page$")
+	public void select_session_on_define_merit_criteria_page(String arg1) throws Throwable {
+		DefineMeritCriteria dmc= new DefineMeritCriteria(driver);
+		dmc.selectSession(arg1);
+	}
+
+	@When("^enter name as \"([^\"]*)\" on define merit criteria page$")
+	public void enter_name_as_on_define_merit_criteria_page(String arg1) throws Throwable {
+		DefineMeritCriteria dmc= new DefineMeritCriteria(driver);
+		dmc.enterName(arg1);
+	}
+
+	@When("^enter maximum point \"([^\"]*)\" on define merit criteria page$")
+	public void enter_maximum_point_on_define_merit_criteria_page(String arg1) throws Throwable {
+		DefineMeritCriteria dmc= new DefineMeritCriteria(driver);
+		dmc.enterMaximumPoint(arg1);
+	}
+
+	@Then("^click save on define merit criteria page$")
+	public void click_save_on_define_merit_criteria_page() throws Throwable {
+		DefineMeritCriteria dmc= new DefineMeritCriteria(driver);
+		dmc.clickSave(schoolname, scenario);
+	}
+
+	@Then("^click view on define merit criteria page$")
+	public void click_view_on_define_merit_criteria_page() throws Throwable {
+		DefineMeritCriteria dmc= new DefineMeritCriteria(driver);
+		dmc.clickView(schoolname, scenario);
 	}
 
 //merit criteria entry

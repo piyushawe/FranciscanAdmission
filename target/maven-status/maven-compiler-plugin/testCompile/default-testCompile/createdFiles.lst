@@ -1,0 +1,3 @@
+runner\ReportsRunner.class
+stepDef\MyTestDefs.class
+runner\VerifyPageRunner.class
