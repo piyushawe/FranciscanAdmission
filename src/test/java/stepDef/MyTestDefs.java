@@ -65,8 +65,6 @@ import pageObjects.StudentDocumentDetails;
 import pageObjects.StudentRepeaterList;
 import pageObjects.VerificationAdmissionForm;
 
-import static com.sun.xml.internal.ws.dump.LoggingDumpTube.Position.Before;
-
 public class MyTestDefs {
 	WebDriver driver;
 	String schoolname;
