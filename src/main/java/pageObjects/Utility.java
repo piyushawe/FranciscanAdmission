@@ -44,7 +44,8 @@ public class Utility {
 	{
 		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 		File f= ((TakesScreenshot)dr).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(f,new File("D:/admission_screenshots/"+str+"/"+r+"/"+r+sc+timeStamp+".png"));
+		//FileUtils.copyFile(f,new File("D:/admission_screenshots/"+str+"/"+r+"/"+r+sc+timeStamp+".png"));
+		FileUtils.copyFile(f,new File("E:/admission_screenshots/"+str+"/"+r+"/"+r+sc+timeStamp+".png"));
 	}
 	public void verifyShow(WebDriver dr,String school, String page,Collection<String> sc)throws IOException
 	{
