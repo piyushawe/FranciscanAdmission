@@ -3,9 +3,9 @@ Feature: Franciscan Admission
       The page is loaded successfully
 
   Background: 
-    Given user enter "http://qaerp.franciscanepay.com/#"
+    Given user enter "http://erptraining.franciscanecare.net/Secure/"
     When user enter "admin" and "fspl@12345"
-    And passes school name "qaepay"
+    And passes school name "erptraining"
     And click signin
     Then admission home page is opened
 
