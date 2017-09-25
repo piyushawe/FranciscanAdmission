@@ -1,28 +1,346 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="13.967699">
-<testcase classname="Franciscan Admission" name="To verify save button on enquiry" time="13.967699">
-<failure message="java.lang.AssertionError&#13;&#10;&#9;at org.junit.Assert.fail(Assert.java:86)&#13;&#10;&#9;at org.junit.Assert.assertTrue(Assert.java:41)&#13;&#10;&#9;at org.junit.Assert.assertTrue(Assert.java:52)&#13;&#10;&#9;at admissionPageObject.Enquiry.clickSave(Enquiry.java:83)&#13;&#10;&#9;at stepDef.MyTestDefs.click_save_on_enquiry_page(MyTestDefs.java:1168)&#13;&#10;&#9;at ✽.Then click save on enquiry page(Feature/VerifySaveView.feature:114)&#13;&#10;"><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="3" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="21" time="814.989832">
+<testcase classname="Admission reports" name="To open class wise admission report with all the filters" time="57.582994">
+<failure message="org.openqa.selenium.NoSuchElementException: Cannot locate element with text: Inspiration public school&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: 'unknown', revision: 'unknown', time: 'unknown'&#10;System info: host: 'DELL-PC', ip: '192.168.10.49', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'&#10;Driver info: driver.version: unknown&#13;&#10;&#9;at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)&#13;&#10;&#9;at pageObjects.ClassWiseAdmisssionReport.selectSchool(ClassWiseAdmisssionReport.java:47)&#13;&#10;&#9;at stepDef.MyTestDefs.select_school_on_class_wise_admission_report(MyTestDefs.java:134)&#13;&#10;&#9;at ✽.And select school &quot;Inspiration public school&quot; on class wise admission report(Feature/Reports.feature:17)&#13;&#10;"><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
 When user enter "admin" and "Admin#franciscan"..............................passed
 And passes school name "qaerp"..............................................passed
 And click signin............................................................passed
 Then admission home page is opened..........................................passed
-When user open enquiry page.................................................passed
-And click get last enquiry no on enquiry page...............................passed
-And enter visitor name as "arush" on enquiry page...........................passed
-And enter visitor address "Noida" on enquiry page...........................passed
-And enter mobile no "6798643210" on enquiry page............................passed
-And enter purpose "Admission" on enquiry page...............................passed
-And enter contact person "Adm dept" on enquiry page.........................passed
-And enter reference details "none" on enquiry page..........................passed
-Then click save on enquiry page.............................................failed
+And class wise admission report is opened...................................passed
+When user select session "2017-2018" on class wise admission report.........passed
+And select school "Inspiration public school" on class wise admission report.failed
+And select class "1" on class wise admission report.........................skipped
+And select stream "All Stream" on class wise admission report...............skipped
+And select subject "All Subject" on class wise admission report.............skipped
+And select from date as month "April" year "2017" and day "1" on class wise admission report.skipped
+And select to date as month "April" year "2017" and day "1" on class wise admission report.skipped
+Then click show to open class wise admission report.........................skipped
 
 StackTrace:
-java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:86)
-	at org.junit.Assert.assertTrue(Assert.java:41)
-	at org.junit.Assert.assertTrue(Assert.java:52)
-	at admissionPageObject.Enquiry.clickSave(Enquiry.java:83)
-	at stepDef.MyTestDefs.click_save_on_enquiry_page(MyTestDefs.java:1168)
-	at ✽.Then click save on enquiry page(Feature/VerifySaveView.feature:114)
+org.openqa.selenium.NoSuchElementException: Cannot locate element with text: Inspiration public school
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'DELL-PC', ip: '192.168.10.49', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at pageObjects.ClassWiseAdmisssionReport.selectSchool(ClassWiseAdmisssionReport.java:47)
+	at stepDef.MyTestDefs.select_school_on_class_wise_admission_report(MyTestDefs.java:134)
+	at ✽.And select school "Inspiration public school" on class wise admission report(Feature/Reports.feature:17)
 ]]></failure>
+</testcase>
+<testcase classname="Admission reports" name="To open search and import online registration report with all the filters" time="66.192267">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And search and import online registration report is opened..................passed
+When user select session "2017-2018" on search and import online registration report page.passed
+And select class "1" on search and import online registration report page...passed
+And select from date as month "April" year "2017" and day "1" on search and import online registration report page.passed
+And select to date as month "April" year "2017" and day "1" on search and import online registration report page.passed
+Then user click show to open search and import online registration report...passed
+]]></system-out>
+</testcase>
+<testcase classname="Admission reports" name="To test import data on search and import online registration report" time="68.283604">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And search and import online registration report is opened..................passed
+When user select session "2017-2018" on search and import online registration report page.passed
+And select class "1" on search and import online registration report page...passed
+And select from date as month "April" year "2017" and day "1" on search and import online registration report page.passed
+And select to date as month "April" year "2017" and day "30" on search and import online registration report page.passed
+Then user click import data to import data on search and import online registration report.passed
+]]></system-out>
+</testcase>
+<testcase classname="Admission reports" name="To test update data to erp on search and import online registration report" time="45.811577">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And search and import online registration report is opened..................passed
+When user select session "2017-2018" on search and import online registration report page.passed
+And select class "1" on search and import online registration report page...passed
+And select from date as month "April" year "2017" and day "1" on search and import online registration report page.passed
+And select to date as month "April" year "2017" and day "1" on search and import online registration report page.passed
+Then user click update data to erp on search and import online registration report.passed
+]]></system-out>
+</testcase>
+<testcase classname="Admission reports" name="To test slot report with all filters" time="28.998368">
+<failure message="org.openqa.selenium.NoSuchElementException: Cannot locate element with text: s1&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: 'unknown', revision: 'unknown', time: 'unknown'&#10;System info: host: 'DELL-PC', ip: '192.168.10.49', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'&#10;Driver info: driver.version: unknown&#13;&#10;&#9;at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)&#13;&#10;&#9;at pageObjects.SlotReport.selectSlot(SlotReport.java:47)&#13;&#10;&#9;at stepDef.MyTestDefs.select_slot_on_slot_report(MyTestDefs.java:244)&#13;&#10;&#9;at ✽.And select slot &quot;s1&quot; on slot report(Feature/Reports.feature:75)&#13;&#10;"><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And slot report is opened...................................................passed
+When user select session "2017-2018" on slot report.........................passed
+And select class "1" on slot report.........................................passed
+And select slot "s1" on slot report.........................................failed
+Then user click show to open slot report....................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: Cannot locate element with text: s1
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'DELL-PC', ip: '192.168.10.49', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at pageObjects.SlotReport.selectSlot(SlotReport.java:47)
+	at stepDef.MyTestDefs.select_slot_on_slot_report(MyTestDefs.java:244)
+	at ✽.And select slot "s1" on slot report(Feature/Reports.feature:75)
+]]></failure>
+</testcase>
+<testcase classname="Admission reports" name="To test admission withdrawal register report" time="40.191021">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And admission withdrawal register report page is opened.....................passed
+When user select session "2017-2018" on admission withdrawal register report.passed
+Then user click show to open admission withdrawal register report...........passed
+]]></system-out>
+</testcase>
+<testcase classname="Admission reports" name="To test verification admission form with all filters" time="37.674225">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And verification admission form is opened...................................passed
+When user select class "1" on verification admission form...................passed
+And select section "A" on verification admission form.......................passed
+And select date as month "April" year "2017" and day "10" on verification admission form.passed
+Then user click show to open verification admission form....................passed
+]]></system-out>
+</testcase>
+<testcase classname="Admission reports" name="To test student repeater list" time="45.142355">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And student repeater list page is opened....................................passed
+When user select class "1" on student repeater list page....................passed
+And select section "A" on student repeater list page........................passed
+Then user click show to open student repeater list page.....................passed
+]]></system-out>
+</testcase>
+<testcase classname="Admission reports" name="To test merit generation list" time="30.954818">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And merit generation list page is opened....................................passed
+When user select session "2017-2018" on merit generation list...............passed
+And user select class "1" on merit generation list..........................passed
+And user select merit list "All Merit List" on merit generation list........passed
+Then user click show to open merit generation list..........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Admission reports" name="To test student document details page" time="25.060614">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And student document details page is opened.................................passed
+When user select class "1" on student document details page.................passed
+And select section "A" on student document details page.....................passed
+Then user click show to open student document details page..................passed
+]]></system-out>
+</testcase>
+<testcase classname="Admission reports" name="To test merit list report" time="35.428309">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And merit list report page is opened........................................passed
+When user select session "2017-2018" on merit list report page..............passed
+And user select class "1" on merit list report page.........................passed
+And user select merit list "All" on merit list report page..................passed
+Then user click show to open merit list report page.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="Admission reports" name="To test prospectus charges report" time="44.721133">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And prospectus charges report page is opened................................passed
+When user select session "2017-2018" on prospectus charges report page......passed
+And select from date as month "April" year "2017" and day "10" on prospectus charges report page.passed
+And select to date as month "April" year "2017" and day "10" on prospectus charges report page.passed
+And user select class "1" on prospectus charges report page.................passed
+And select user "eCare Admin" on prospectus charges report page.............passed
+And select mode "Offline" on prospectus charges report page.................passed
+Then user click show to open prospectus charges report page.................passed
+]]></system-out>
+</testcase>
+<testcase classname="Admission reports" name="To test merit criteria print report criteria wise" time="16.464584">
+<failure message="org.openqa.selenium.NoSuchElementException: Cannot locate element with text: Ten&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: 'unknown', revision: 'unknown', time: 'unknown'&#10;System info: host: 'DELL-PC', ip: '192.168.10.49', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'&#10;Driver info: driver.version: unknown&#13;&#10;&#9;at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)&#13;&#10;&#9;at pageObjects.MeritCriteriaPrint.selectCriteriaName(MeritCriteriaPrint.java:64)&#13;&#10;&#9;at stepDef.MyTestDefs.select_criteria_name_on_merit_criteria_print_report_page(MyTestDefs.java:492)&#13;&#10;&#9;at ✽.And select criteria name &quot;Ten&quot; on merit criteria print report page(Feature/Reports.feature:179)&#13;&#10;"><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And merit criteria print report page is opened..............................passed
+When user select session "2017-2018" on merit criteria print report page....passed
+And user select class "1" on merit criteria print report page...............passed
+And click criteria wise on merit criteria print report page.................passed
+And select criteria name "Ten" on merit criteria print report page..........failed
+And enter criteria point "10" on merit criteria print report page...........skipped
+Then user click show to open merit criteria print report page...............skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: Cannot locate element with text: Ten
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'DELL-PC', ip: '192.168.10.49', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at pageObjects.MeritCriteriaPrint.selectCriteriaName(MeritCriteriaPrint.java:64)
+	at stepDef.MyTestDefs.select_criteria_name_on_merit_criteria_print_report_page(MyTestDefs.java:492)
+	at ✽.And select criteria name "Ten" on merit criteria print report page(Feature/Reports.feature:179)
+]]></failure>
+</testcase>
+<testcase classname="Admission reports" name="To test merit criteria print report point wise" time="26.966825">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And merit criteria print report page is opened..............................passed
+When user select session "2017-2018" on merit criteria print report page....passed
+And user select class "1" on merit criteria print report page...............passed
+And click point wise on merit criteria print report page....................passed
+And enter total point "10" on merit criteria print report page..............passed
+Then user click show to open merit criteria print report page...............passed
+]]></system-out>
+</testcase>
+<testcase classname="Admission reports" name="To test print student label page" time="25.086675">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And print student label page is opened......................................passed
+And user select class "1" on  print student label page......................passed
+When user select section "A" on  print student label page...................passed
+And enter search text "sonia1" on merit criteria print report page..........passed
+Then user click show to open print student label page.......................passed
+]]></system-out>
+</testcase>
+<testcase classname="Admission reports" name="To test print student label page when transport is clicked" time="22.761024">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And print student label page is opened......................................passed
+And user select class "1" on  print student label page......................passed
+When user select section "A" on  print student label page...................passed
+And click transport on print student label page.............................passed
+Then user click show to open print student label page.......................passed
+]]></system-out>
+</testcase>
+<testcase classname="Admission reports" name="To test collection report admission page prospectus wise" time="47.726672">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And collection report admission page is opened..............................passed
+And select prospectus wise on collection report admission page..............passed
+And select from date as month "April" year "2017" and day "1" on collection report admission page.passed
+And select to date as month "April" year "2017" and day "30" on collection report admission page.passed
+And user select class "1" on collection report admission page...............passed
+When user select session "2017-2018" on collection report admission page....passed
+And select board "ICSE" on collection report admission page.................passed
+And select pay mode "Cash" on collection report admission page..............passed
+And select entry mode "Both" on collection report admission page............passed
+And select order by "Name" on collection report admission page..............passed
+And select group by "Class" on collection report admission page.............passed
+Then user click show to open collection report admission page...............passed
+]]></system-out>
+</testcase>
+<testcase classname="Admission reports" name="To test collection report admission page admission form wise" time="42.518242">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And collection report admission page is opened..............................passed
+And select admission form wise on collection report admission page..........passed
+And select from date as month "April" year "2017" and day "1" on collection report admission page.passed
+And select to date as month "April" year "2017" and day "30" on collection report admission page.passed
+And user select class "1" on collection report admission page...............passed
+When user select session "2017-2018" on collection report admission page....passed
+And select board "ICSE" on collection report admission page.................passed
+And select pay mode "Cash" on collection report admission page..............passed
+And select entry mode "Both" on collection report admission page............passed
+And select order by "Name" on collection report admission page..............passed
+And select group by "Class" on collection report admission page.............passed
+Then user click show to open collection report admission page...............passed
+]]></system-out>
+</testcase>
+<testcase classname="Admission reports" name="To test collection report admission page admission entry wise" time="39.852337">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And collection report admission page is opened..............................passed
+And select admission entry wise on collection report admission page.........passed
+And select from date as month "April" year "2017" and day "1" on collection report admission page.passed
+And select to date as month "April" year "2017" and day "30" on collection report admission page.passed
+And user select class "1" on collection report admission page...............passed
+When user select session "2017-2018" on collection report admission page....passed
+And select board "All Board" on collection report admission page............passed
+And select pay mode "Cheque" on collection report admission page............passed
+And select entry mode "Both" on collection report admission page............passed
+And select order by "RegNo" on collection report admission page.............passed
+And select group by "Date" on collection report admission page..............passed
+Then user click show to open collection report admission page...............passed
+]]></system-out>
+</testcase>
+<testcase classname="Admission reports" name="To test collection report admission page reslot wise" time="40.38041">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And collection report admission page is opened..............................passed
+And select reslot wise on collection report admission page..................passed
+And select from date as month "April" year "2017" and day "1" on collection report admission page.passed
+And select to date as month "April" year "2017" and day "30" on collection report admission page.passed
+And user select class "1" on collection report admission page...............passed
+When user select session "2017-2018" on collection report admission page....passed
+And select board "All Board" on collection report admission page............passed
+And select pay mode "All" on collection report admission page...............passed
+And select entry mode "Both" on collection report admission page............passed
+And select order by "RegNo" on collection report admission page.............passed
+And select group by "No" on collection report admission page................passed
+Then user click show to open collection report admission page...............passed
+]]></system-out>
+</testcase>
+<testcase classname="Admission reports" name="To test sibling report" time="27.191778">
+<system-out><![CDATA[Given user enter "http://qaerp.franciscanecare.net".........................passed
+When user enter "admin" and "Admin#franciscan"..............................passed
+And passes school name "qaerp"..............................................passed
+And click signin............................................................passed
+Then admission home page is opened..........................................passed
+And sibling report page is opened...........................................passed
+When user select session "2017-2018" on sibling report page.................passed
+And select school "All" on sibling report page..............................passed
+And select class "1-A" on sibling report page...............................passed
+And select show details for "Elder" on sibling report page..................passed
+Then user click show to open sibling report.................................passed
+]]></system-out>
 </testcase>
 </testsuite>

@@ -75,7 +75,8 @@ public class MyTestDefs {
 	@Before
 	public void launchBrowser(Scenario sc)
 	{
-		System.setProperty("webdriver.chrome.driver", "D:\\selenium\\chrome\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "D:\\selenium\\chrome\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "E:\\chromedriver\\chromedriver_win32\\chromedriver.exe");
 		driver= new ChromeDriver();
 		driver.manage().window().maximize();
 		scenario= sc.getSourceTagNames();

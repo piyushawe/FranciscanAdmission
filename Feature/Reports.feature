@@ -3,9 +3,9 @@ Feature: Admission reports
      So that I can verify that there is no problem in report loading
 
   Background: 
-    Given user enter "http://erp.stkarenssecondaryschool.com"
-    When user enter "admin" and "stkss#54321techpass"
-    And passes school name "st karen"
+    Given user enter "http://erptraining.franciscanecare.net/Secure/"
+    When user enter "admin" and "fspl@12345"
+    And passes school name "erptraining"
     And click signin
     Then admission home page is opened
 
@@ -23,8 +23,8 @@ Feature: Admission reports
     Then click show to open class wise admission report
 
     Examples: 
-      | url                              | uname | password  | session   | school                    | class |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 | 2017-2018 | Inspiration public school |     1 |
+       | session   | school                    | class |
+       | 2017-2018 | Allenhouse Public School  |     I |
 
   #search and import online registration
   @scenario2
@@ -37,8 +37,8 @@ Feature: Admission reports
     Then user click show to open search and import online registration report
 
     Examples: 
-      | url                              | uname | password  | session   | class |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 | 2017-2018 |     1 |
+      | session   | class |
+      | 2017-2018 |     I |
 
   @scenario3
   Scenario Outline: To test import data on search and import online registration report
@@ -50,8 +50,8 @@ Feature: Admission reports
     Then user click import data to import data on search and import online registration report
 
     Examples: 
-      | url                              | uname | password  | session   | class |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 | 2017-2018 |     1 |
+      | session   | class |
+      | 2017-2018 |     I |
 
   @scenario4
   Scenario Outline: To test update data to erp on search and import online registration report
@@ -63,8 +63,8 @@ Feature: Admission reports
     Then user click update data to erp on search and import online registration report
 
     Examples: 
-      | url                              | uname | password  | session   | class |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 | 2017-2018 |     1 |
+      | session    | class |
+       | 2017-2018 |     I |
 
   #slot report
   @scenario5
@@ -76,8 +76,8 @@ Feature: Admission reports
     Then user click show to open slot report
 
     Examples: 
-      | url                              | uname | password  | session   | class | slot |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 | 2017-2018 |     1 | s1   |
+      | session   | class | slot     |
+      | 2017-2018 |     I | Slot 1   |
 
   #admission withdrawal register
   @scenario6
@@ -87,8 +87,8 @@ Feature: Admission reports
     Then user click show to open admission withdrawal register report
 
     Examples: 
-      | url                              | uname | password  | session   |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 | 2017-2018 |
+     | session   |
+     | 2017-2018 |
 
   #verification admission form
   @scenario7
@@ -100,8 +100,8 @@ Feature: Admission reports
     Then user click show to open verification admission form
 
     Examples: 
-      | url                              | uname | password  | class | section |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 |     1 | A       |
+     | class | section |
+     |     I | A       |
 
   #student repeater list
   @scenario8
@@ -112,8 +112,8 @@ Feature: Admission reports
     Then user click show to open student repeater list page
 
     Examples: 
-      | url                              | uname | password  | class | section |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 |     1 | A       |
+     | class | section |
+     |     I | A       |
 
   #merit generation list
   @scenario9
@@ -125,8 +125,8 @@ Feature: Admission reports
     Then user click show to open merit generation list
 
     Examples: 
-      | url                              | uname | password  | session   | class | merit list     |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 | 2017-2018 |     1 | All Merit List |
+     | session   | class | merit list|
+     | 2017-2018 |     I | Main List |
 
   #student document details
   @scenario10
@@ -137,8 +137,8 @@ Feature: Admission reports
     Then user click show to open student document details page
 
     Examples: 
-      | url                              | uname | password  | class | section |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 |     1 | A       |
+       | class | section |
+       |     I | A       |
 
   #merit list report
   @scenario11
@@ -150,8 +150,8 @@ Feature: Admission reports
     Then user click show to open merit list report page
 
     Examples: 
-      | url                              | uname | password  | session   | class | merit list |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 | 2017-2018 |     1 | All        |
+        | session   | class | merit list |
+        | 2017-2018 |     I | Main List  |
 
   #prospectus charges report
   @scenario12
@@ -166,8 +166,8 @@ Feature: Admission reports
     Then user click show to open prospectus charges report page
 
     Examples: 
-      | url                              | uname | password  | session   | class | user        | mode    |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 | 2017-2018 |     1 | eCare Admin | Offline |
+     | session   | class | user        | mode    |
+     | 2017-2018 |     I | eCare Admin | Offline |
 
   #merit criteria print
   @scenario13
@@ -181,8 +181,8 @@ Feature: Admission reports
     Then user click show to open merit criteria print report page
 
     Examples: 
-      | url                              | uname | password  | session   | class | criteria name |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 | 2017-2018 |     1 | Ten           |
+      | session   | class | criteria name |
+      | 2017-2018 |     I | Ten           |
 
   @scenario14
   Scenario Outline: To test merit criteria print report point wise
@@ -194,8 +194,8 @@ Feature: Admission reports
     Then user click show to open merit criteria print report page
 
     Examples: 
-      | url                              | uname | password  | session   | class | criteria name |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 | 2017-2018 |     1 | Ten           |
+      | session   | class | criteria name |
+      | 2017-2018 |     I | Admission     |
 
   #print student label
   @scenario15
@@ -207,8 +207,8 @@ Feature: Admission reports
     Then user click show to open print student label page
 
     Examples: 
-      | url                              | uname | password  | section | class | name   |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 | A       |     1 | sonia1 |
+     | section | class | name   |
+     | A       |     I | sonia1 |
 
   @scenario16
   Scenario Outline: To test print student label page when transport is clicked
@@ -219,8 +219,8 @@ Feature: Admission reports
     Then user click show to open print student label page
 
     Examples: 
-      | url                              | uname | password  | section | class |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 | A       |     1 |
+     | section | class |
+     | A       |     I |
 
   #collection report admission
   @scenario17
@@ -239,8 +239,8 @@ Feature: Admission reports
     Then user click show to open collection report admission page
 
     Examples: 
-      | url                              | uname | password  | class | session   | board |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 |     1 | 2017-2018 | ICSE  |
+      | class | session   | board |
+      |     1 | 2017-2018 | ICSE  |
 
   @scenario18
   Scenario Outline: To test collection report admission page admission form wise
@@ -258,8 +258,8 @@ Feature: Admission reports
     Then user click show to open collection report admission page
 
     Examples: 
-      | url                              | uname | password  | class | session   | board |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 |     1 | 2017-2018 | ICSE  |
+     | class | session   | board |
+     |     I | 2017-2018 | ICSE  |
 
   @scenario19
   Scenario Outline: To test collection report admission page admission entry wise
@@ -277,8 +277,8 @@ Feature: Admission reports
     Then user click show to open collection report admission page
 
     Examples: 
-      | url                              | uname | password  | class | session   | board     |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 |     1 | 2017-2018 | All Board |
+      | class | session   | board     |
+      |     I | 2017-2018 | All Board |
 
   @scenario20
   Scenario Outline: To test collection report admission page reslot wise
@@ -296,8 +296,8 @@ Feature: Admission reports
     Then user click show to open collection report admission page
 
     Examples: 
-      | url                              | uname | password  | class | session   | board     |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 |     1 | 2017-2018 | All Board |
+     | class | session   | board     |
+     |     I | 2017-2018 | All Board |
 
   #sibling report
   @scenario21
@@ -310,5 +310,5 @@ Feature: Admission reports
     Then user click show to open sibling report
 
     Examples: 
-      | url                              | uname | password  | class | session   | school |
-      | http://qaerp.franciscanecare.net | admin | Admin@987 | 1-A   | 2017-2018 | All    |
+     | class | session   | school |
+     | I-A   | 2017-2018 | All    |

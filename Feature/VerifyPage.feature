@@ -3,9 +3,9 @@ Feature: Franciscan Admission
       The page is loaded successfully
 
   Background: 
-    Given user enter "http://erp.stkarenssecondaryschool.com"
-    When user enter "admin" and "stkss#54321techpass"
-    And passes school name "st karen"
+    Given user enter "http://qaerp.franciscanepay.com/#"
+    When user enter "admin" and "fspl@12345"
+    And passes school name "qaepay"
     And click signin
     Then admission home page is opened
 
