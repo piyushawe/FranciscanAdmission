@@ -157,7 +157,8 @@ public class Utility {
 	public void prepareErrorLog(ArrayList<String>lst, String school )throws IOException
 	{
 		ArrayList<String>list= new ArrayList<String>(Arrays.asList("Date","Scenario", "Page","Error Message"));
-		File file = new File("D:/TestReports/" + school + "/Admission/ErrorLog.xls");
+		//File file = new File("D:/TestReports/" + school + "/Admission/ErrorLog.xls");
+        File file = new File("E:/TestReports/" + school + "/Admission/ErrorLog.xls");
 		File pdir= file.getParentFile();
 		FileInputStream fis;
 		HSSFWorkbook wb;
